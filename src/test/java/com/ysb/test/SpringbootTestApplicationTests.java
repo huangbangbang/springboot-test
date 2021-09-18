@@ -43,20 +43,7 @@ class SpringbootTestApplicationTests {
     }
 
     @Resource
-    private RedisTemplate<String, Object> redisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
 
-    /*@RequestMapping("set")
-    public void set(){
-        redisTemplate.setKeySerializer(new );
-        user.setId(1);
-        user.setName("jack");
-        redisTemplate.opsForStream("user",user);
-    }*/
-
-    @Test
-    public void get(){
-        System.out.println((String) redisTemplate.opsForValue().get("k1"));
-
-    }
 
 }
