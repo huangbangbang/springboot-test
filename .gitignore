@@ -18,6 +18,7 @@ local.properties
 
 
 .mvn/
+mvn*
 
 ##----------idea----------
 ##----------git rm -r --cached .
