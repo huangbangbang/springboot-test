@@ -1,0 +1,16 @@
+logging:
+  level:
+    root: info
+
+# 配置发送方信息
+spring:
+  mail:
+    host: smtp.163.com
+    username: huangbangbang666@163.com
+    password: VQBNSYPTJBAOUXRR                   # 填写客户端的授权码
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
