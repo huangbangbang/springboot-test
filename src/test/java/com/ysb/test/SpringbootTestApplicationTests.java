@@ -3,10 +3,13 @@ package com.ysb.test;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
@@ -37,6 +40,23 @@ class SpringbootTestApplicationTests {
         mimeMessageHelper.setTo("3497618951@qq.com");
         mimeMessageHelper.setFrom("huangbangbang666@163.com");
         javaMailSender.send(mimeMessage);
+    }
+
+    @Resource
+    private RedisTemplate<String, Object> redisTemplate;
+
+    /*@RequestMapping("set")
+    public void set(){
+        redisTemplate.setKeySerializer(new );
+        user.setId(1);
+        user.setName("jack");
+        redisTemplate.opsForStream("user",user);
+    }*/
+
+    @Test
+    public void get(){
+        System.out.println((String) redisTemplate.opsForValue().get("k1"));
+
     }
 
 }
